@@ -8,9 +8,7 @@ export default {
     format: "iife",
   },
   plugins: [
-    css({
-      output: 'bundle.css'
-    }),
+    css({ output: 'bundle.css' }),
     nodeResolve(),
   ],
 };
