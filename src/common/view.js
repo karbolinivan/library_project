@@ -9,6 +9,7 @@ export class AbstractView {
   render() {
     return;
   }
+  
   destrtoy() {
     return;
   }
