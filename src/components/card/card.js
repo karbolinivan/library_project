@@ -4,7 +4,7 @@ export class Card extends DivComponent {
   constructor(appState, cardState) {
     super();
     this.appState = appState;
-    this.parentState = cardState;
+    this.cardState = cardState;
   }
 
   render() {
@@ -14,7 +14,7 @@ export class Card extends DivComponent {
     );
     this.el.innerHTML = `
         <div class="card__image">
-            <image src="${
+            <image src="https://covers.openlibrary.org/b/olid/${
               this.cardState.cover_edition_key
             }-M.jpg" alt="Обложка"/>    
         </div>
@@ -39,12 +39,13 @@ export class Card extends DivComponent {
                 }">
                     ${
                       existInFavorites
-                        ? "./static/favorites.svg"
-                        : "./static/favorites-white.svg"
+                        ? '<img src="./static/favorite-black.svg" />'
+                        : '<img src="./static/favorite-white.svg" />'
                     }
                 </button>
             </div>  
         </div>
     `;
+    return this.el;
   }
 }

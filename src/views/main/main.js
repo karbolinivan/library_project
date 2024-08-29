@@ -37,6 +37,7 @@ export class MainView extends AbstractView {
       this.state.numFound = data.numFound;
       this.state.loading = false;
       this.state.list = data.docs;
+      console.log(data.docs);
     }
     if (path === "list" || path === "loading") {
       this.render();
