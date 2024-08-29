@@ -1,6 +1,6 @@
 import { AbstractView } from "../../common/view.js";
 import onChange from "on-change";
-import { Header } from "../../components/header/header";
+import { Header } from "../../components/header/header.js";
 import { Search } from "../../components/search/search.js";
 import { CardList } from "../../components/card-list/card-list.js";
 
@@ -19,6 +19,11 @@ export class MainView extends AbstractView {
     this.appstate = onChange(this.appState, this.appStateHook.bind(this));
     this.state = onChange(this.state, this.stateHook.bind(this));
     this.setTitle("Поиск книг");
+  }
+
+  destroy() {
+    onChange.unsubscribe(this.appState);
+    onChange.unsubscribe(this.state);
   }
 
   appStateHook(path) {

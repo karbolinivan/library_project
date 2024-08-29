@@ -1,4 +1,4 @@
-import { DivComponent } from "../../common/div-component";
+import { DivComponent } from "../../common/div-component.js";
 import "./card.css";
 export class Card extends DivComponent {
   constructor(appState, cardState) {
@@ -33,17 +33,15 @@ export class Card extends DivComponent {
                     : "None"
                 }
             </div>  
-            <div class="card__footer">
-                <button class="button__add ${
-                  existInFavorites ? "button__active" : ""
-                }">
-                    ${
-                      existInFavorites
-                        ? '<img src="./static/favorite-black.svg" />'
-                        : '<img src="./static/favorite-white.svg" />'
-                    }
-                </button>
-            </div>  
+           <div class="card__footer">
+					    <button class="button__add ${existInFavorites ? "button__active" : ""}">
+						    ${
+                  existInFavorites
+                    ? '<img src="/static/favorite-black.svg" />'
+                    : '<img src="/static/favorite-white.svg" />'
+                }
+					    </button>
+				  </div>  
         </div>
     `;
     return this.el;
