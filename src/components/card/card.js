@@ -1,10 +1,21 @@
 import { DivComponent } from "../../common/div-component.js";
 import "./card.css";
+
 export class Card extends DivComponent {
   constructor(appState, cardState) {
     super();
     this.appState = appState;
     this.cardState = cardState;
+  }
+
+  #addToFavorites() {
+    this.appState.favorites.push(this.cardState);
+  }
+
+  #deleteFromFavorites() {
+    this.appState.favorites = this.appState.favorites.filter(
+      (b) => b.key !== this.cardState.key
+    );
   }
 
   render() {
@@ -44,6 +55,15 @@ export class Card extends DivComponent {
 				  </div>  
         </div>
     `;
+    if (existInFavorites) {
+      this.el
+        .querySelector("button")
+        .addEventListener("click", this.#deleteFromFavorites.bind(this));
+    } else {
+      this.el
+        .querySelector("button")
+        .addEventListener("click", this.#addToFavorites.bind(this));
+    }
     return this.el;
   }
 }
