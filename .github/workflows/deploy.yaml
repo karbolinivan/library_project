@@ -2,7 +2,9 @@ name: Deploy
 
 on:
   push:
-    branches: -main
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Checkout repository
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "20"
