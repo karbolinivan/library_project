@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "live-server",
-    "build": "rollup -c --watch"
+    "build": "rollup -c",
+    "dev-build": "rollup -c --watch"
   },
   "keywords": [],
   "author": "",
