@@ -16,7 +16,7 @@ export class MainView extends AbstractView {
   constructor(appState) {
     super();
     this.appState = appState;
-    this.appstate = onChange(this.appState, this.appStateHook.bind(this));
+    this.appState = onChange(this.appState, this.appStateHook.bind(this));
     this.state = onChange(this.state, this.stateHook.bind(this));
     this.setTitle("Поиск книг");
   }
@@ -58,6 +58,11 @@ export class MainView extends AbstractView {
 
   render() {
     const main = document.createElement("div");
+    main.innerHTML = `
+      <h1>
+        Найдено книг - ${this.state.list.length}
+      </h1>
+    `;
     main.append(new Search(this.state).render());
     main.append(new CardList(this.appState, this.state).render());
     this.app.innerHTML = "";

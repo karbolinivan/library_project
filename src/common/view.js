@@ -10,7 +10,7 @@ export class AbstractView {
     return;
   }
 
-  destrtoy() {
+  destroy() {
     return;
   }
 }

@@ -18,7 +18,7 @@ export class Header extends DivComponent {
                     <img src="/static/search-header.svg" alt="Поиск" />
                     Поиск книг      
                 </a>
-                <a class="menu__item" href="#">
+                <a class="menu__item" href="#favorites">
                     <img src="/static/favorites.svg" alt="Избранное" />
                     Избранное
                     <div class="menu__counter">
